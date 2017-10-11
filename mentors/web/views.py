@@ -1,9 +1,5 @@
-from django.http import HttpResponse
-from django.views import View
+from django.views.generic import TemplateView
 
 
-class HomeView(View):
-    http_method_names = ['get']
-
-    def dispatch(self, request, *args, **kwargs):
-        return HttpResponse('OK')
+class HomeView(TemplateView):
+    template_name = 'web/home.html'
