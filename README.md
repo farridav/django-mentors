@@ -12,25 +12,14 @@ Make an env.yml with your env vars in, e.g:
     ENV_VARS:
       DJANGO_SECRET_KEY: 'SOME_KEY'
 
-### Build
-Make a virtual environment with python 3, install deps and migrate the db (sqlite locally)
-
-    python3.6 -m venv .venv && . .venv/bin/activate
-    pip3 install -r requirements.txt
-    ./manage.py migrate
-
-### Run
-    ./manage.py runserver
-### Test
-    ./manage.py test
+## Local
+- Build with `make local`
+- Run with `./manage.py runserver`
+- Test with `make test`
 
 ## Docker
+- Build with `make docker-build`
+- Run with `make docker-run` 
 
-### Build    
-    docker build -t farridav/django-mentors .
-
-### Run
-    docker run --rm -it -p 8000:8000 farridav/django-mentors
-    
 ## Deployment
-TODO
+    make docker-deploy
